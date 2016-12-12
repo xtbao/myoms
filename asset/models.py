@@ -1,45 +1,46 @@
+#coding:utf-8
 from django.db import models
 
 # Create your models here.
 
-class HostList(mode.model):
-    ip = models.CharField(max_length=20, verbose_bame='IPµØÖ·')
-    hostname = models.CharField(max_length=30, verbose_bame='IPÖ÷»úÃû')
-    product = models.CharField(max_length=20, verbose_name=u'²úÆ·')
-    application = models.CharField(max_length=20, verbose_name=u'Ó¦ÓÃ')
-    idc_jg = models.CharField(max_length=10, blank=True, verbose_name=u'»ú¹ñ±àºÅ')
-    status = models.CharField(max_length=10, verbose_name=u'Ê¹ÓÃ×´Ì¬')
-    remark = models.TextField(max_length=50, blank=True, verbose_name=u'±¸×¢')
+class HostList(models.Model):
+    ip = models.CharField(max_length=20, verbose_name='IPåœ°å€')
+    hostname = models.CharField(max_length=30, verbose_name='IPä¸»æœºå')
+    product = models.CharField(max_length=20, verbose_name='äº§å“')
+    application = models.CharField(max_length=20, verbose_name='åº”ç”¨')
+    idc_jg = models.CharField(max_length=10, blank=True, verbose_name='æœºæŸœç¼–å·')
+    status = models.CharField(max_length=10, verbose_name='ä½¿ç”¨çŠ¶æ€')
+    remark = models.TextField(max_length=50, blank=True, verbose_name='å¤‡æ³¨')
 
     def __srt__(self):
         return u'%s - %s - %s' %(self.ip, self.hostname, self.application )
 
     class Meta:
-        verbose_name = u'Ö÷»úÁĞ±í'
-        verbose_name = u'Ö÷»úÁĞ±í¹ÜÀí'
+        verbose_name = 'ä¸»æœºåˆ—è¡¨'
+        verbose_name = 'ä¸»æœºåˆ—è¡¨ç®¡ç†'
 
 
 class ServerAsset(models.Model):
-    manufacturer = models.CharField(max_length=20, verbose_name=u'³§ÉÌ')
-    service_sn = models.CharField(max_length=80, unique=True, verbose_name=u'ĞòÁĞºÅ')
-    cpu_model = models.CharField(max_length=50, verbose_name=u'CPUĞÍºÅ')
-    cpu_nums = models.PositiveSmallIntegerField(verbose_name=u'CPUÏß³ÌÊı')
-    mem = models.CharField(max_length=5, verbose_name='ÄÚ´æ´óĞ¡')
-    disk = models.CharField(max_length=5, verbose_name='Ó²ÅÌ´óĞ¡')
-    hostname = models.CharField(max_length=30, verbose_name=u'Ö÷»úÃû')
-    ip = models.CharField(max_length=20, verbose_name=u'IPµØÖ·')
-    macaddress = models.CharField(max_length=40, verbose_name=u'MACµØÖ·')
-    os = models.CharField(max_length=20, verbose_name=u'²Ù×÷ÏµÍ³')
-    virtual = models.CharField(max_length=20, verbose_name=u'ÊÇ·ñÎªĞéÄâ»ú')
-    #productname = models.CharField(max_length=30, verbose_name=u'²úÆ·ĞÍºÅ')
-    #cpu_groups = models.PositiveSmallIntegerField(verbose_name=u'CPUÎïÀíºËÊı')
-    #raid = models.CharField(max_length=5, verbose_name='RAID¼¶±ğ')
-    #idc_name = models.CharField(max_length=10, blank=True, verbose_name=u'ËùÊô»ú·¿')
+    manufacturer = models.CharField(max_length=20, verbose_name='å‚å•†')
+    service_sn = models.CharField(max_length=80, unique=True, verbose_name='åºåˆ—å·')
+    cpu_model = models.CharField(max_length=50, verbose_name='CPUå‹å·')
+    cpu_nums = models.PositiveSmallIntegerField(verbose_name='CPUçº¿ç¨‹æ•°')
+    mem = models.CharField(max_length=5, verbose_name='å†…å­˜å¤§å°')
+    disk = models.CharField(max_length=5, verbose_name='ç¡¬ç›˜å¤§å°')
+    hostname = models.CharField(max_length=30, verbose_name='ä¸»æœºå')
+    ip = models.CharField(max_length=20, verbose_name='IPåœ°å€')
+    macaddress = models.CharField(max_length=40, verbose_name='MACåœ°å€')
+    os = models.CharField(max_length=20, verbose_name='æ“ä½œç³»ç»Ÿ')
+    virtual = models.CharField(max_length=20, verbose_name='æ˜¯å¦ä¸ºè™šæ‹Ÿæœº')
+    #productname = models.CharField(max_length=30, verbose_name=u'äº§å“å‹å·')
+    #cpu_groups = models.PositiveSmallIntegerField(verbose_name=u'CPUç‰©ç†æ ¸æ•°')
+    #raid = models.CharField(max_length=5, verbose_name='RAIDçº§åˆ«')
+    #idc_name = models.CharField(max_length=10, blank=True, verbose_name=u'æ‰€å±æœºæˆ¿')
 
     def __str__(self):
-        return u'%s - %s' %(self.ip, self.hostname )
+        return '%s - %s' %(self.ip, self.hostname )
 
     class Meta:
-        verbose_name = u'Ö÷»ú×Ê²úĞÅÏ¢'
-        verbose_name_plural = u'Ö÷»ú×Ê²úĞÅÏ¢¹ÜÀí'
+        verbose_name = 'ä¸»æœºèµ„äº§ä¿¡æ¯'
+        verbose_name_plural = 'ä¸»æœºèµ„äº§ä¿¡æ¯ç®¡ç†'
 
