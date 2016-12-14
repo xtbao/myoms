@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>看似简单弗兰克</title>
+<script type="text/javascript" src="/static/bootstrap/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+<style type="text/css">
+html,body { margin:0; padding:0; overflow:hidden; height:100%; }
+#jz-login { margin:0 auto; border:1px solid #666; background-color:#CCC; width:300px; }
+</style>
+<script type="text/javascript">
+function makeItMiddle() {
+	document.getElementById('jz-login').style.marginTop = (document.getElementsByTagName('body')[0].offsetHeight - document.getElementById('jz-login').offsetHeight) / 2 + 'px';
+}
+window.onload = makeItMiddle;
+window.onresize = makeItMiddle;
+</script>
+</head>
+
+<body>
+    {% if password_is_wrong %}
+        <div class="alert alert-error">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <h4>错误!</h4>用户名或密码错误
+        </div>
+    {% endif %}    
+    <div class="well" id="jz-login" style="margin:auto">
+        <h1>OMS系统</h1>
+        <form class="form-horizontal" action="" method="post">
+            {% csrf_token %}
+	    {{ form }}
+            <p></p>
+            <p class="form-actions">
+                <input type="submit" value="登录" class="btn btn-primary">
+                <a href="/contactme/"><input type="button" value="忘记密码" class="btn btn-danger"></a>
+                <a href="/contactme/"><input type="button" value="新员工？" class="btn btn-success"></a>
+            </p>
+        </form>
+    </div>
+    <script src="/static/bootstrap/js/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>

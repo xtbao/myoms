@@ -1,26 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
+{% extends "index.html" %}    
+{% block title %}OMS{% endblock %}
+{% block container %}
+    <section id="login-container" style="margin-top:16%">
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <div class="row">
+            <div class="col-md-3" id="login-wrapper">
+                <div class="panel panel-primary animated flipInY">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Sign Up
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <form method ="post" role="form">
+                        {{uf.as_p}}
+                        {{errors}}
+                        <button type="submit" class="btn btn-default">注 册</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<title>用户注册</title>
-</head>
+    </section>
 
-<style type="text/css">
-body{color:#efd;background:#453;padding:0 5em;margin:0}
-h1{padding:2em 1em;background:#675}
-h2{color:#bf8;border-top:1px dotted #fff;margin-top:2em}
-p{margin:1em 0}
-
-</style>
-<body>
-<h1>注册页面：</h1>
-<form method = 'post' enctype="multipart/form-data">
-{{uf.as_p}}
-{{errors}}
-	</br>
-	<input type="submit" value ="ok"/>
-</form>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,1 @@
+on makeItMiddle(){document.getElementById('test').style.marginTop=(document.getElementsByTagName('body')[0].offsetHeight-document.getElementById('test').offsetHeight)/2+'px'}window.onload=makeItMiddle;window.onresize=makeItMiddle;ion makeItMiddle() {
