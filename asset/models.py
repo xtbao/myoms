@@ -12,8 +12,8 @@ class HostList(models.Model):
     status = models.CharField(max_length=10, verbose_name='使用状态')
     remark = models.TextField(max_length=50, blank=True, verbose_name='备注')
 
-    def __srt__(self):
-        return u'%s - %s - %s' %(self.ip, self.hostname, self.application )
+    def __str__(self):
+        return '%s - %s - %s' %(self.ip, self.hostname, self.application )
 
     class Meta:
         verbose_name = '主机列表'
