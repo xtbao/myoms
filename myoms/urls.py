@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 #from mylogin.views import index, register
-from mylogin.views import login, logout, index
+from mylogin.views import login, logout, index, success, base
+from asset.views import *
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -24,4 +25,14 @@ urlpatterns = [
     url(r'^login/$', login),
    # url(r'^zhuce/$', register, name="register"),
     url(r'logout/$', logout),
+    url(r'^idc/$',idc),
+    url(r'^addidc/$', addidc),
+    url(r'^macresult/$',macresult),
+    url(r'^idc/idc_delete/$',idc_delete),
+    url(r'^mac/$',mac),
+    url(r'^addmac/$',addmac),
+    url(r'^mac/mac_delete/$',mac_delete),
+    url(r'^mac/mac_edit/$',mac_edit),
+    url(r'success/$', success),
+    url(r'base/$', base),
 ]

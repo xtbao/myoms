@@ -1,7 +1,10 @@
 {% extends "index.html" %}
 {% block title %}OMS{% endblock %}
+{% block css %}
+<!-- DataTables-->
+<link rel="stylesheet" href="/static/plugins/dataTables/css/dataTables.css">
+{% endblock %}
 {% block container %}
-	<h1>恭喜,{{operation}}成功！</h1>
        <div class="row">
             <div class="col-md-12">
                <!--breadcrumbs start -->
@@ -75,4 +78,5 @@
                  </div>
              </div>
       	<!--row end-->
+
 {% endblock %}

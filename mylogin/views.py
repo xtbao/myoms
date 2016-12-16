@@ -43,3 +43,9 @@ def logout(request):
 @login_required
 def index(request):
     return render_to_response('index.html')
+
+
+def success(request):
+    return render_to_response('success.html')
+def base(request):
+    return render_to_response('base.html')
